@@ -1,6 +1,8 @@
-# Zero Trust Cloudflare Guacamole Instant Docker
+# Zero Trust Cloudflare Guacamole Instant Docker ⏰
 
-This is a formula for instantly building a secure zero trust [Guacamole](https://guacamole.apache.org) instance connected through [Cloudflare Teams](https://www.cloudflare.com/teams/remote-workforces/) and protected by the [Zero Trust Network Access](https://www.cloudflare.com/teams/zero-trust-network-access/) (ZTNA).  This is a proof on concept configuration for testing, it implements full zero trust.  You cannot access this Guacamole instance outside of the authenication policies defined in the Cloudflare Teams zero trust design.  If the back end network were compromosed that this docker container is on, this Guacamole host is not directly accessible as the ports are not exposed. 
+This is a formula for instantly building a secure zero trust 🔐 [Guacamole](https://guacamole.apache.org) instance connected through [Cloudflare Teams](https://www.cloudflare.com/teams/remote-workforces/) and protected by the [Zero Trust Network Access](https://www.cloudflare.com/teams/zero-trust-network-access/) (ZTNA).  This is a proof on concept configuration for testing 🧪, it implements full zero trust for network access when configured with proper policies.  
+
+You cannot access this Guacamole instance outside of the authenication policies defined in the Cloudflare Teams zero trust design.  If the back end network were compromised 🧨 that this docker container is on, this Guacamole host is not directly accessible as the ports are not exposed. 
 
 ## This Container
 
@@ -18,7 +20,7 @@ This is a formula for instantly building a secure zero trust [Guacamole](https:/
 
 ## Prepare
 
-Git clone the repository and configure two files, Dockerfile and config.yml. You'll want to set your timezone, set your Cloudflare Team name, and then the domain you use for your Cloudflare Team.
+Git 📡 clone the repository and configure two files, Dockerfile and config.yml. You'll want to set your timezone, set your Cloudflare Team name, and then the domain you use for your Cloudflare Team.
 
 ```bash
 git clone https://github.com/RamboRogers/cloudflareguacamole
@@ -32,7 +34,7 @@ ingress:
   - service: http_status:404
 ```
 
-**Dockerfile** - Change the timezone and the team name.
+**Dockerfile** - Change the timezone 🇺🇸 and the team name.
 ```bash
 ENV CLOUDFLARETEAM yourcloudflareteamname
 ENV TZ America/New_York
@@ -41,6 +43,8 @@ ENV TZ America/New_York
 
 **Teams Console Setup** - Make sure to [setup your application](https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/self-hosted-apps) in Cloudflare.
 Once you've configured your files, you can build the container.  You will need access to the Cloudflare Teams console and the main Cloudflare console as well during this process.  The application name must match the DNS definition for the hostname which is guacamole.
+
+
 
 ---
 ## Build and Run
@@ -52,8 +56,9 @@ docker build --no-cache -t cloudflareguacamole .
 docker run --name cloudflareguacamole --restart always -d cloudflareguacamole
 ```
 
-You should now have a working Guacamole environment ready for usage from Cloudeflare!  
+You should now have a working Guacamole environment ready for usage from Cloudeflare!🚀 The initial password for guacamole will be guacadmin with password guacadmin, and the url will be your hostname/guacamole.  
 
+*You should change the db admin password, and make sure you change the guacadmin password*
 
 ---
 ## Contributing
