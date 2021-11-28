@@ -18,6 +18,10 @@ This is a formula for instantly building a secure zero trust [Guacamole](https:/
 
 Git clone the repository and configure two files, Dockerfile and config.yml. You'll want to set your timezone, set your Cloudflare Team name, and then the domain you use for your Cloudflare Team.
 
+```bash
+git clone https://github.com/RamboRogers/cloudflareguacamole
+```
+
 **config.yml** - Change your domain.
 ```bash
 ingress:
@@ -41,6 +45,7 @@ Once you've configured your files, you can build the container.  You will need a
 To build this container, simply execute buildrun.sh on a linux or mac docker host. You could also manually execute the docker commands.  During the build the build will pause and provide you with a Cloudflare URL to follow to authorize the Argo tunnel.  Once your approve this tunnel, the build will continue.
 
 ```bash
+cd cloudflareguacamole
 docker build --no-cache -t cloudflareguacamole .
 docker run --name cloudflareguacamole --restart always -d cloudflareguacamole
 ```
