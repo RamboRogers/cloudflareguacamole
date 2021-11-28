@@ -1,0 +1,5 @@
+#Change the hostname to match what you want yours to be, likely guacamole.yourdomain.com that is linked to your teams instance.
+ingress:
+  - hostname: guacamole.yourdomain.com
+    service: http://127.0.0.1:8080
+  - service: http_status:404
