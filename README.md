@@ -12,6 +12,8 @@ This is a formula for instantly building a secure zero trust [Guacamole](https:/
 6. Installs mariadb and configures for Guacamole
 7. Install and configures Tomcat with Guacamole client
 
+![Drawing of Cloudflare Guacamole](cloudflareguacamole.png "Example Drawing")
+
 ---
 
 ## Prepare
